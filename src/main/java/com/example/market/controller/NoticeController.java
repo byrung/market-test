@@ -98,4 +98,9 @@ public class NoticeController {
         noticeService.updateNotice(id, title, content);
         return "redirect:/menu_announcement"; // 수정 후 목록 페이지로 이동
     }
+
+    @GetMapping("/menu_announcement")
+    public String menuAnnouncement() {
+        return "menu_announcement"; // 공지사항 페이지 템플릿 이름
+    }
 }

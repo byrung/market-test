@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "NOTICE")
 public class Notice {
 
     @Id
@@ -16,7 +17,7 @@ public class Notice {
     @Column(name = "TITLE")
     private String title;
 
-    @Column(name = "CONTENT")
+    @Column(name = "content", length = 255)
     private String content;
 
     @Column(name = "CREATED_DATE")
