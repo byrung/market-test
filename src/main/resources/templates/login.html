@@ -81,6 +81,12 @@
                 로그인
             </div>
             <div class="login-frm" sec:authorize="!isAuthenticated()">
+                <div th:if="${param.error} == 'access-denied'" class="error">
+                    <p>권한이 없습니다. 로그인 후 다시 시도해주세요.</p>
+                </div>
+                <div th:if="${param.error} == 'true'" class="error">
+                    <p>아이디 또는 비밀번호가 잘못되었습니다.</p>
+                </div>
                 <form action="/login" method="post">
                     <div class="input-login-tap">
                         <input type="text" name="username" placeholder="아이디를 입력해주세요." required>
@@ -92,6 +98,9 @@
                         <button type="submit" class="btn btn_type1 btn_login_type">로그인</button>
                     </div>
                 </form>
+            </div>
+
+
             </div>
         </div>
     </div>
